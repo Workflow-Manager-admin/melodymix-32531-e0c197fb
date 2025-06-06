@@ -276,7 +276,8 @@ function App() {
           "Vaseegara",
           "Uyirin Uyire",
           "Hasili Fisiliye",
-          "Ondra Renda"
+          "Ondra Renda",
+          "Nenjai Poo Pol Koithavaley"
         ],
       },
       {
@@ -324,7 +325,8 @@ function App() {
           "Kaavaalaa",
           "Naan Nee",
           "Enjoy Enjaami",
-          "Thangamey"
+          "Thangamey",
+          "Kannama"
         ],
       },
     ],
