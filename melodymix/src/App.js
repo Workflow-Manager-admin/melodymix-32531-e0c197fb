@@ -854,22 +854,43 @@ function App() {
                       if (e.key === "Enter") handleArtistSelect(a);
                     }}
                   >
-                    <img
-                      src={a.image || placeholderImg}
-                      alt={a.name}
-                      style={{
-                        width: 120,
-                        height: 120,
-                        objectFit: "cover",
-                        borderRadius: "50%",
-                        marginBottom: 16,
-                        boxShadow: "0 2px 10px rgba(76,83,93,0.07)",
-                        border: `3px solid ${palette.primary}`,
-                        display: "block"
-                      }}
-                      loading="lazy"
-                      onError={(e) => { e.target.onerror = null; e.target.src = placeholderImg; }}
-                    />
+                    <div style={{position:"relative"}}>
+                      <img
+                        src={a.image || placeholderImg}
+                        alt={a.name}
+                        style={{
+                          width: 120,
+                          height: 120,
+                          objectFit: "cover",
+                          borderRadius: "50%",
+                          marginBottom: 16,
+                          boxShadow: "0 2px 10px rgba(76,83,93,0.07)",
+                          border: `3px solid ${palette.primary}`,
+                          display: "block"
+                        }}
+                        loading="lazy"
+                        onError={(e) => {
+                          // Custom debug: only for Alan Walker
+                          if (a.name === "Alan Walker") {
+                            // eslint-disable-next-line no-console
+                            console.error("Alan Walker image failed: src=", e.target.src, "hint:", a._imgFileHint, "debugVar:", a._imgDebug);
+                          }
+                          e.target.onerror = null;
+                          e.target.src = placeholderImg;
+                        }}
+                      />
+                      {/* Overlay debug warning if Alan Walker and image fails */}
+                      {a.name === "Alan Walker" && (
+                        <div style={{
+                          position:"absolute",
+                          left:0, top:"50%", width:"100%", textAlign:"center",
+                          fontSize:12, color:"#b50043", background:"#fff7",
+                          pointerEvents:"none"
+                        }}>
+                          <span style={{fontWeight:700}}>Alan Walker avatar fail?</span>
+                        </div>
+                      )}
+                    </div>
                     <span
                       style={{
                         fontSize: 19,
@@ -1000,22 +1021,41 @@ function App() {
                     flex: 1,
                   }}
                 >
-                  <img
-                    src={artist.image || placeholderImg}
-                    alt={artist.name}
-                    style={{
-                      width: 120,
-                      height: 120,
-                      objectFit: "cover",
-                      borderRadius: "50%",
-                      marginBottom: 14,
-                      boxShadow: "0 2px 10px rgba(76,83,93,0.11)",
-                      border: `3px solid ${palette.primary}`,
-                      display: "block"
-                    }}
-                    loading="lazy"
-                    onError={(e) => { e.target.onerror = null; e.target.src = placeholderImg; }}
-                  />
+                  <div style={{position:"relative"}}>
+                    <img
+                      src={artist.image || placeholderImg}
+                      alt={artist.name}
+                      style={{
+                        width: 120,
+                        height: 120,
+                        objectFit: "cover",
+                        borderRadius: "50%",
+                        marginBottom: 14,
+                        boxShadow: "0 2px 10px rgba(76,83,93,0.11)",
+                        border: `3px solid ${palette.primary}`,
+                        display: "block"
+                      }}
+                      loading="lazy"
+                      onError={(e) => {
+                        if (artist.name === "Alan Walker") {
+                          // eslint-disable-next-line no-console
+                          console.error("Alan Walker image failed (lyrics card): src=", e.target.src, "hint:", artist._imgFileHint, "debugVar:", artist._imgDebug);
+                        }
+                        e.target.onerror = null;
+                        e.target.src = placeholderImg;
+                      }}
+                    />
+                    {artist.name === "Alan Walker" && (
+                      <div style={{
+                        position:"absolute",
+                        left:0, top:"50%", width:"100%", textAlign:"center",
+                        fontSize:12, color:"#b50043", background:"#fff7",
+                        pointerEvents:"none"
+                      }}>
+                        <span style={{fontWeight:700}}>Alan Walker avatar fail?</span>
+                      </div>
+                    )}
+                  </div>
                   <span
                     style={{
                       display: "block",
