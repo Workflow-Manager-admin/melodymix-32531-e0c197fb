@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 import adeleAvatar from './adele-avatar.png';
 import lanaDelReyAvatar from './lana-del-rey-avatar.jpg';
+import taylorSwiftAvatar from './taylor-swift-avatar.jpg';
 
 /*
  * A simple in-app component for user registration & login
@@ -363,7 +364,7 @@ function App() {
       },
       {
         name: "Taylor Swift",
-        // Remove custom image for Taylor Swift; fallback to placeholder
+        image: taylorSwiftAvatar,
         songs: [
           "Love Story",
           "Blank Space",
