@@ -276,7 +276,6 @@ function App() {
           "Vaseegara",
           "Uyirin Uyire",
           "Hasili Fisiliye",
-          "Anbil Avan",
           "Ondra Renda"
         ],
       },
@@ -289,7 +288,8 @@ function App() {
           "Loosu Penne",
           "En Kadhal Solla",
           "Venmegam",
-          "Oru Naalil"
+          "Oru Naalil",
+          "Rowdy Baby"
         ],
       },
       {
@@ -324,8 +324,7 @@ function App() {
           "Kaavaalaa",
           "Naan Nee",
           "Enjoy Enjaami",
-          "Thangamey",
-          "Rowdy Baby"
+          "Thangamey"
         ],
       },
     ],
