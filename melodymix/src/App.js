@@ -332,48 +332,48 @@ function App() {
     ],
     English: [
       {
-        name: "Taylor Swift",
+        name: "Ana Del Ray",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/f/f2/Taylor_Swift_Red_Tour_5_cropped.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/7/7a/Lana_Del_Rey_%282%29_%28cropped%29.jpg",
         songs: [
-          "Love Story",
-          "Blank Space",
-          "Shake It Off",
-          "You Belong With Me",
-        ],
+          "Summertime Sadness",
+          "Young and Beautiful",
+          "Born to Die",
+          "Video Games"
+        ]
       },
       {
-        name: "Ed Sheeran",
+        name: "Coldplay",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/4/45/Ed_Sheeran_2013.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/1/1b/Coldplay_-_Global_Citizen_Festival_Hamburg_02.jpg",
         songs: [
-          "Shape of You",
-          "Perfect",
-          "Thinking Out Loud",
-          "Photograph",
-        ],
+          "Viva La Vida",
+          "Fix You",
+          "Yellow",
+          "Paradise"
+        ]
       },
       {
-        name: "Adele",
+        name: "The Weeknd",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/6/6b/Adele_2016.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/9/9b/The_Weeknd_performing_in_Hong_Kong_2018_%28cropped%29.jpg",
         songs: [
-          "Hello",
-          "Someone Like You",
-          "Rolling in the Deep",
-          "Set Fire to the Rain",
-        ],
+          "Blinding Lights",
+          "Starboy",
+          "The Hills",
+          "Save Your Tears"
+        ]
       },
       {
-        name: "Bruno Mars",
+        name: "Alan Walker",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/1/16/BrunoMars24KMagicWorldTourLive_Lucca_2018_%2840%29_%2833029844978%29.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/d/d0/Alan_Walker_%28artiste%29.jpg",
         songs: [
-          "Just The Way You Are",
-          "Grenade",
-          "Uptown Funk",
-          "That's What I Like",
-        ],
+          "Faded",
+          "Alone",
+          "Spectre",
+          "Darkside"
+        ]
       },
     ],
   };
