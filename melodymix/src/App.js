@@ -230,6 +230,10 @@ function App() {
   const [ytLoading, setYtLoading] = useState(false);
 
   // Hardcoded artists and their songs, with images (use royalty-free or Wikipedia images)
+  // Royalty-free placeholder (CC0) for missing artist images
+  const placeholderImg =
+    "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_placeholder.png";
+
   const artistData = {
     Tamil: [
       {
@@ -329,6 +333,9 @@ function App() {
           "Kannama"
         ],
       },
+      // Example: if you need to add a generic/unknown artist in the future,
+      // provide no image and the placeholderImg will show up
+      // { name: "Unknown Tamil Artist", songs: ["Sample Song 1"] }
     ],
     English: [
       // Merged, full English artist list (Taylor Swift + previous and current)
@@ -411,7 +418,9 @@ function App() {
           "Darkside"
         ]
       },
-      // Add more previous or requested English artists here if there were any that are not already present
+      // Example: if you need to add a generic/unknown artist in the future,
+      // provide no image and the placeholderImg will show up
+      // { name: "Unknown English Artist", songs: ["Sample Song 1"] }
     ],
   };
 
