@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
+import adeleAvatar from './adele-avatar.png';
 
 /*
  * A simple in-app component for user registration & login
@@ -351,7 +352,7 @@ function App() {
       },
       {
         name: "Adele",
-        image: require('./adele-avatar.png'),
+        image: adeleAvatar,
         songs: [
           "Hello",
           "Rolling in the Deep",
