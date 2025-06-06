@@ -409,7 +409,7 @@ function App() {
       },
       {
         name: "Alan Walker",
-        image: alanWalkerAvatar,
+        image: alanWalkerAvatar, // Use only this imported variable for Alan Walker's avatar everywhere
         songs: [
           "Faded",
           "Alone",
