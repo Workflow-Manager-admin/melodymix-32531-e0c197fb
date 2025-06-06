@@ -351,8 +351,7 @@ function App() {
       },
       {
         name: "Adele",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/6/6b/Adele_2016.jpg",
+        image: require('./adele-avatar.png'),
         songs: [
           "Hello",
           "Rolling in the Deep",
