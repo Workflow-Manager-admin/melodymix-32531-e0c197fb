@@ -5,6 +5,10 @@ import lanaDelReyAvatar from './lana-del-rey-avatar.jpg';
 import taylorSwiftAvatar from './taylor-swift-avatar.jpg';
 import coldplayAvatar from './coldplay-avatar.jpg';
 import theWeekndAvatar from './the-weeknd-avatar.jpg';
+// import alanWalkerAvatarLatest from './alan-walker-avatar-latest.jpg';
+
+// Test placeholder: swap Alan Walker's avatar with a known good placeholder
+const alanWalkerAvatarTest = "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_placeholder.png";
 import alanWalkerAvatarLatest from './alan-walker-avatar-latest.jpg';
 
 /*
@@ -409,7 +413,9 @@ function App() {
       },
       {
         name: "Alan Walker",
-        image: alanWalkerAvatarLatest,
+        // Swap in known-good placeholder for diagnostic test:
+        image: alanWalkerAvatarTest,
+        // To revert: image: alanWalkerAvatarLatest,
         songs: [
           "Faded",
           "Alone",
