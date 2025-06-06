@@ -473,10 +473,18 @@ function App() {
     }
   }
 
-  // Fetch lyrics when song selected
+  // Fetch lyrics when song selected, except for Tamil (do not fetch for Tamil, display informational message)
   useEffect(() => {
     if (!artist || !song) return;
     if (step !== "lyrics") return;
+
+    if (language === "Tamil") {
+      setLyrics(null);
+      setLyricsError("Lyrics are not available for Tamil songs.");
+      setLyricsLoading(false);
+      return;
+    }
+
     setLyricsLoading(true);
     setLyricsError(null);
 
@@ -521,7 +529,7 @@ function App() {
         }
       })
       .finally(() => setLyricsLoading(false));
-  }, [artist, song, step]);
+  }, [artist, song, step, language]);
 
   // Fetch YouTube video when lyrics page loads
   useEffect(() => {
