@@ -233,14 +233,63 @@ function App() {
   const artistData = {
     Tamil: [
       {
+        name: "Ilayaraja",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/9/9a/Ilaiyaraaja_at_Hungama_Records_Audio_Release.JPG",
+        songs: [
+          "Thenpaandi Cheemayile",
+          "Annakili Unnai Theduthe",
+          "En Iniya Pon Nilave",
+          "Rakkamma Kaiya Thattu",
+          "Naanaga Naanillai"
+        ],
+      },
+      {
+        name: "AR Rahman",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/9/94/A._R._Rahman_2019.jpg",
+        songs: [
+          "Chaiyya Chaiyya",
+          "Anbil Avan",
+          "Vennilave Vennilave",
+          "Ennavale Adi Ennavale",
+          "Ottagathai Kattiko"
+        ],
+      },
+      {
+        name: "Vidyasagar",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/c/cf/Vidyasagar.jpg",
+        songs: [
+          "Apdi Podu",
+          "Malare Mounama",
+          "Kannalane",
+          "Dole Dole",
+          "O Podu"
+        ],
+      },
+      {
         name: "Harris Jayaraj",
         image:
           "https://upload.wikimedia.org/wikipedia/commons/4/4a/Harris_Jayaraj_at_the_Anegan_Audio_Launch.jpg",
         songs: [
           "Vaseegara",
           "Uyirin Uyire",
-          "Hasili Fisili",
-          "Anbil Avan"
+          "Hasili Fisiliye",
+          "Anbil Avan",
+          "Ondra Renda"
+        ],
+      },
+      {
+        name: "Yuvan Shankar Raja",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/7/74/Yuvan_Shankar_Raja.jpg",
+        songs: [
+          "Idhu Kaadhal Kadhal Kaatchi",
+          "Loosu Penne",
+          "En Kadhal Solla",
+          "Venmegam",
+          "Oru Naalil"
         ],
       },
       {
@@ -251,7 +300,20 @@ function App() {
           "Un Mela Aasadhaan",
           "Yathe Yathe",
           "Pookkal Pookkum",
-          "Imaye Imaye"
+          "Imaye Imaye",
+          "Ayyayo Nenju"
+        ],
+      },
+      {
+        name: "Anirudh Ravichander",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/9/9f/Anirudh_Ravichander.png",
+        songs: [
+          "Why This Kolaveri Di",
+          "Vaathi Coming",
+          "Don'u Don'u Don'u",
+          "Selfie Pulla",
+          "Surviva"
         ],
       },
       {
@@ -262,18 +324,8 @@ function App() {
           "Kaavaalaa",
           "Naan Nee",
           "Enjoy Enjaami",
-          "Thangamey"
-        ],
-      },
-      {
-        name: "Anirudh Ravichandar",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/9/9f/Anirudh_Ravichander.png",
-        songs: [
-          "Why This Kolaveri Di",
-          "Surviva",
-          "Kanave Kanave",
-          "Vaathi Coming"
+          "Thangamey",
+          "Rowdy Baby"
         ],
       },
     ],
