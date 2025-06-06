@@ -8,7 +8,15 @@ function SignUpLogin({ onAuthSuccess, palette }) {
   const [mode, setMode] = useState("signup"); // or 'login'
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [storedUsers, setStoredUsers] = useState({});
+  // Use localStorage for persistence between reloads
+  const [storedUsers, setStoredUsers] = useState(() => {
+    try {
+      const users = window.localStorage.getItem("mmix_users");
+      return users ? JSON.parse(users) : {};
+    } catch {
+      return {};
+    }
+  });
   const [error, setError] = useState("");
   const audioRef = useRef(null); // For sound playback
 
@@ -24,7 +32,11 @@ function SignUpLogin({ onAuthSuccess, palette }) {
       return;
     }
     // Register new user
-    setStoredUsers((prev) => ({ ...prev, [username]: password }));
+    setStoredUsers((prev) => {
+      const newUsers = { ...prev, [username]: password };
+      window.localStorage.setItem("mmix_users", JSON.stringify(newUsers));
+      return newUsers;
+    });
     setError("");
     // Play success sound then proceed
     if (audioRef.current) {
@@ -43,7 +55,14 @@ function SignUpLogin({ onAuthSuccess, palette }) {
       setError("Username and password required.");
       return;
     }
-    if (!storedUsers[username] || storedUsers[username] !== password) {
+    // Load users fresh from localStorage in case there was a new signup in another tab
+    let users;
+    try {
+      users = JSON.parse(window.localStorage.getItem("mmix_users")) || {};
+    } catch {
+      users = {};
+    }
+    if (!users[username] || users[username] !== password) {
       setError("Invalid login. Try again or switch to sign up.");
       return;
     }
