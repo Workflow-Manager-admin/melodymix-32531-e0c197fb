@@ -5,6 +5,7 @@ import lanaDelReyAvatar from './lana-del-rey-avatar.jpg';
 import taylorSwiftAvatar from './taylor-swift-avatar.jpg';
 import coldplayAvatar from './coldplay-avatar.jpg';
 import theWeekndAvatar from './the-weeknd-avatar.jpg';
+import ilayarajaAvatar from './ilayaraja-avatar.jpg';
 
 /*
  * A simple in-app component for user registration & login
@@ -243,8 +244,7 @@ function App() {
     Tamil: [
       {
         name: "Ilayaraja",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/9/9a/Ilaiyaraaja_at_Hungama_Records_Audio_Release.JPG",
+        image: ilayarajaAvatar,
         songs: [
           "Thenpaandi Cheemayile",
           "Annakili Unnai Theduthe",
