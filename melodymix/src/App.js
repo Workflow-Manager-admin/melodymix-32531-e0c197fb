@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 import adeleAvatar from './adele-avatar.png';
 import lanaDelReyAvatar from './lana-del-rey-avatar.jpg';
+import taylorSwiftAvatar from './taylor-swift-avatar.png';
 
 /*
  * A simple in-app component for user registration & login
@@ -363,8 +364,7 @@ function App() {
       },
       {
         name: "Taylor Swift",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/f/f2/Taylor_Swift_Red_Tour_5%2C_2013.jpg",
+        image: taylorSwiftAvatar,
         songs: [
           "Love Story",
           "Blank Space",
