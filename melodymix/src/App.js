@@ -70,6 +70,26 @@ function SignUpLogin({ onAuthSuccess, palette }) {
     onAuthSuccess(username);
   }
 
+  // Always stay in sync with latest stored users (e.g. across tabs)
+  useEffect(() => {
+    const onStorage = () => {
+      try {
+        const users = window.localStorage.getItem("mmix_users");
+        setStoredUsers(users ? JSON.parse(users) : {});
+      } catch {
+        setStoredUsers({});
+      }
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, []);
+  // Reset error and fields when switching modes
+  useEffect(() => {
+    setUsername("");
+    setPassword("");
+    setError("");
+  }, [mode]);
+
   return (
     <div style={{
       maxWidth: 400,
