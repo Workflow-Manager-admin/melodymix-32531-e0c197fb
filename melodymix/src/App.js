@@ -1042,7 +1042,12 @@ function App() {
                   >
                     Lyrics
                   </div>
-                  {lyricsLoading ? (
+                  {/* Tamil disables lyrics, override UI */}
+                  {language === "Tamil" ? (
+                    <div style={{ color: palette.accent, fontWeight: 600, padding: 12 }}>
+                      Lyrics are not available for Tamil songs.
+                    </div>
+                  ) : lyricsLoading ? (
                     <div style={{ color: palette.accent, padding: 12 }}>
                       Fetching lyrics...
                     </div>
