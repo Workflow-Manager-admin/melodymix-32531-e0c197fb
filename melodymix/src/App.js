@@ -479,17 +479,47 @@ function App() {
     if (step !== "lyrics") return;
     setLyricsLoading(true);
     setLyricsError(null);
+
+    // Clean artist name and song title for possible trailing spaces or symbols
+    const safeArtist = artist && artist.name ? artist.name.trim() : "";
+    const safeSong = song ? song.trim() : "";
+
+    // Only fetch if both artist and song names are non-empty after trimming
+    if (!safeArtist || !safeSong) {
+      setLyrics(null);
+      setLyricsError("Lyrics unavailable (invalid artist/song title).");
+      setLyricsLoading(false);
+      return;
+    }
+
     fetch(
-      `https://api.lyrics.ovh/v1/${encodeURIComponent(
-        artist.name
-      )}/${encodeURIComponent(song)}`
+      `https://api.lyrics.ovh/v1/${encodeURIComponent(safeArtist)}/${encodeURIComponent(safeSong)}`
     )
-      .then((r) => r.json())
-      .then((d) => {
-        if (d.lyrics) setLyrics(d.lyrics);
-        else setLyricsError("Lyrics not found.");
+      .then((r) => {
+        if (!r.ok) {
+          // lyrics.ovh returns 404 for not found lyrics instead of a JSON error
+          throw new Error("Lyrics not found");
+        }
+        return r.json();
       })
-      .catch(() => setLyricsError("Lyrics unavailable."))
+      .then((d) => {
+        if (d.lyrics && typeof d.lyrics === "string" && d.lyrics.trim() !== "") {
+          setLyrics(d.lyrics);
+          setLyricsError(null);
+        } else {
+          setLyrics(null);
+          setLyricsError("Lyrics not found for this song.");
+        }
+      })
+      .catch((err) => {
+        setLyrics(null);
+        // Provide user-friendly error
+        if (err.message === "Lyrics not found") {
+          setLyricsError("Lyrics not found for this song. Try another track.");
+        } else {
+          setLyricsError("Lyrics unavailable (network or API error).");
+        }
+      })
       .finally(() => setLyricsLoading(false));
   }, [artist, song, step]);
 
