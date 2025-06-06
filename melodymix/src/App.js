@@ -164,11 +164,14 @@ function SignUpLogin({ onAuthSuccess, palette }) {
   );
 }
 
-// PUBLIC_INTERFACE
 /**
- * Core MelodyMix app container with views for language/artist/song/lyrics/video flows.
+ * Core MelodyMix app container with sign up/login gating, then music app flow.
  */
+// PUBLIC_INTERFACE
 function App() {
+  // Authentication state
+  const [authenticatedUser, setAuthenticatedUser] = useState(null);
+
   // App state steps: "language", "artist", "song", "lyrics"
   const [language, setLanguage] = useState(null); // "Tamil" | "English"
   const [artist, setArtist] = useState(null);
