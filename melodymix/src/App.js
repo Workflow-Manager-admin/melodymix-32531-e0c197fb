@@ -23,6 +23,8 @@ function SignUpLogin({ onAuthSuccess, palette }) {
   // Register user in local state
   function handleSignUp(e) {
     e.preventDefault();
+    // Clear error immediately to avoid lingering UI messages
+    setError("");
     if (!username || !password) {
       setError("Username and password required.");
       return;
@@ -31,21 +33,25 @@ function SignUpLogin({ onAuthSuccess, palette }) {
       setError("User already exists. Please log in.");
       return;
     }
-    // Register new user
+    // Register new user and flush state first so form disables quickly/etc.
     setStoredUsers((prev) => {
       const newUsers = { ...prev, [username]: password };
       window.localStorage.setItem("mmix_users", JSON.stringify(newUsers));
       return newUsers;
     });
-    setError("");
-    // Play success sound then proceed
+    // Play success sound then immediately transition (don’t block on audio)
     if (audioRef.current) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play();
+      try {
+        audioRef.current.currentTime = 0;
+        // Use play().catch for browsers with autoplay restrictions, ignoring errors
+        audioRef.current.play().catch(() => {});
+      } catch {}
     }
+    // Transition view instantly—don’t wait for sound to finish, let audio play in background
     setTimeout(() => {
+      setError(""); // Defensive: clear any race error
       onAuthSuccess(username);
-    }, 700); // brief delay after sound
+    }, 250); // 250ms for better UX feel. Remove needless waiting.
   }
 
   // Log in
