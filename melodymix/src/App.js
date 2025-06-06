@@ -5,6 +5,7 @@ import lanaDelReyAvatar from './lana-del-rey-avatar.jpg';
 import taylorSwiftAvatar from './taylor-swift-avatar.jpg';
 import coldplayAvatar from './coldplay-avatar.jpg';
 import theWeekndAvatar from './the-weeknd-avatar.jpg';
+// Use the new Ilayaraja avatar placed in src
 import ilayarajaAvatar from './ilayaraja-avatar.jpg';
 
 /*
