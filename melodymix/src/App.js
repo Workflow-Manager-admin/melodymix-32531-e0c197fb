@@ -852,7 +852,7 @@ function App() {
                     }}
                   >
                     <img
-                      src={a.image}
+                      src={a.image || placeholderImg}
                       alt={a.name}
                       style={{
                         width: 110,
@@ -864,6 +864,7 @@ function App() {
                         border: `3px solid ${palette.primary}`,
                       }}
                       loading="lazy"
+                      onError={(e) => { e.target.onerror = null; e.target.src = placeholderImg; }}
                     />
                     <span
                       style={{
@@ -996,7 +997,7 @@ function App() {
                   }}
                 >
                   <img
-                    src={artist.image}
+                    src={artist.image || placeholderImg}
                     alt={artist.name}
                     style={{
                       width: 125,
@@ -1008,6 +1009,7 @@ function App() {
                       border: `3px solid ${palette.primary}`,
                     }}
                     loading="lazy"
+                    onError={(e) => { e.target.onerror = null; e.target.src = placeholderImg; }}
                   />
                   <span
                     style={{
