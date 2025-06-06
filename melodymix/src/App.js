@@ -855,13 +855,14 @@ function App() {
                       src={a.image || placeholderImg}
                       alt={a.name}
                       style={{
-                        width: 110,
-                        height: 110,
+                        width: 120,
+                        height: 120,
                         objectFit: "cover",
                         borderRadius: "50%",
                         marginBottom: 16,
                         boxShadow: "0 2px 10px rgba(76,83,93,0.07)",
                         border: `3px solid ${palette.primary}`,
+                        display: "block"
                       }}
                       loading="lazy"
                       onError={(e) => { e.target.onerror = null; e.target.src = placeholderImg; }}
@@ -1000,13 +1001,14 @@ function App() {
                     src={artist.image || placeholderImg}
                     alt={artist.name}
                     style={{
-                      width: 125,
-                      height: 125,
+                      width: 120,
+                      height: 120,
                       objectFit: "cover",
                       borderRadius: "50%",
                       marginBottom: 14,
                       boxShadow: "0 2px 10px rgba(76,83,93,0.11)",
                       border: `3px solid ${palette.primary}`,
+                      display: "block"
                     }}
                     loading="lazy"
                     onError={(e) => { e.target.onerror = null; e.target.src = placeholderImg; }}
