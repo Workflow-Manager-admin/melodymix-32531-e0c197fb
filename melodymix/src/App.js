@@ -5,7 +5,7 @@ import lanaDelReyAvatar from './lana-del-rey-avatar.jpg';
 import taylorSwiftAvatar from './taylor-swift-avatar.jpg';
 import coldplayAvatar from './coldplay-avatar.jpg';
 import theWeekndAvatar from './the-weeknd-avatar.jpg';
-import alanWalkerAvatarV3 from './alan-walker-avatar.jpg?cb=3';
+import alanWalkerAvatar from './alan-walker-avatar.jpg';
 
 /*
  * A simple in-app component for user registration & login
@@ -409,8 +409,7 @@ function App() {
       },
       {
         name: "Alan Walker",
-        // Updated to the newest uploaded image (cache-busted)
-        image: alanWalkerAvatarV3,
+        image: alanWalkerAvatar,
         songs: [
           "Faded",
           "Alone",
