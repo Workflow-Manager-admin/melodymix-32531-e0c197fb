@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 import adeleAvatar from './adele-avatar.png';
+import lanaDelReyAvatar from './lana-del-rey-avatar.jpg';
 
 /*
  * A simple in-app component for user registration & login
@@ -374,8 +375,7 @@ function App() {
       },
       {
         name: "Lana Del Rey",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/7/7a/Lana_Del_Rey_%282%29_%28cropped%29.jpg",
+        image: lanaDelReyAvatar,
         songs: [
           "Summertime Sadness",
           "Young and Beautiful",
