@@ -3,6 +3,7 @@ import "./App.css";
 import adeleAvatar from './adele-avatar.png';
 import lanaDelReyAvatar from './lana-del-rey-avatar.jpg';
 import taylorSwiftAvatar from './taylor-swift-avatar.jpg';
+import coldplayAvatar from './coldplay-avatar.jpg';
 
 /*
  * A simple in-app component for user registration & login
@@ -386,8 +387,7 @@ function App() {
       },
       {
         name: "Coldplay",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/1/1b/Coldplay_-_Global_Citizen_Festival_Hamburg_02.jpg",
+        image: coldplayAvatar,
         songs: [
           "Viva La Vida",
           "Fix You",
