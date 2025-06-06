@@ -1,5 +1,168 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
+
+/*
+ * A simple in-app component for user registration & login
+ */
+function SignUpLogin({ onAuthSuccess, palette }) {
+  const [mode, setMode] = useState("signup"); // or 'login'
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [storedUsers, setStoredUsers] = useState({});
+  const [error, setError] = useState("");
+  const audioRef = useRef(null); // For sound playback
+
+  // Register user in local state
+  function handleSignUp(e) {
+    e.preventDefault();
+    if (!username || !password) {
+      setError("Username and password required.");
+      return;
+    }
+    if (storedUsers[username]) {
+      setError("User already exists. Please log in.");
+      return;
+    }
+    // Register new user
+    setStoredUsers((prev) => ({ ...prev, [username]: password }));
+    setError("");
+    // Play success sound then proceed
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play();
+    }
+    setTimeout(() => {
+      onAuthSuccess(username);
+    }, 700); // brief delay after sound
+  }
+
+  // Log in
+  function handleLogin(e) {
+    e.preventDefault();
+    if (!username || !password) {
+      setError("Username and password required.");
+      return;
+    }
+    if (!storedUsers[username] || storedUsers[username] !== password) {
+      setError("Invalid login. Try again or switch to sign up.");
+      return;
+    }
+    setError("");
+    onAuthSuccess(username);
+  }
+
+  return (
+    <div style={{
+      maxWidth: 400,
+      margin: "120px auto",
+      background: palette.secondary,
+      borderRadius: "16px",
+      boxShadow: "0 2px 16px rgba(255,128,227,0.08)",
+      padding: "42px 32px 30px 32px",
+      border: `2.5px solid ${palette.primary}`,
+      color: palette.accent,
+      fontFamily: "inherit"
+    }}>
+      <audio ref={audioRef} src={process.env.PUBLIC_URL ? process.env.PUBLIC_URL+'/success-chime.mp3' : "success-chime.mp3"} preload="auto" />
+      <h2 style={{margin: 0, marginBottom: 25, textAlign: "center", color: palette.primary}}>
+        {mode === "signup" ? "Sign Up for MelodyMix" : "Log In to MelodyMix"}
+      </h2>
+
+      <form onSubmit={mode === "signup" ? handleSignUp : handleLogin} autoComplete="off">
+        <div style={{marginBottom: 18}}>
+          <label style={{fontWeight: 600, letterSpacing: "-0.5px", fontSize: 17}} htmlFor="username">Username</label>
+          <input
+            autoFocus
+            id="username"
+            type="text"
+            value={username}
+            autoComplete="username"
+            onChange={e => setUsername(e.target.value)}
+            style={{
+              display: "block",
+              width: "100%",
+              padding: "11px 13px",
+              marginTop: 7,
+              marginBottom: 8,
+              borderRadius: 7,
+              border: `1.5px solid ${palette.primary}`,
+              fontSize: 17,
+              color: palette.accent,
+              outline: "none"
+            }}
+          />
+        </div>
+        <div style={{marginBottom: 16}}>
+          <label style={{fontWeight: 600, letterSpacing: "-0.5px", fontSize: 17}} htmlFor="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            autoComplete={mode==="signup" ? "new-password" : "current-password"}
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            style={{
+              display: "block",
+              width: "100%",
+              padding: "11px 13px",
+              marginTop: 7,
+              borderRadius: 7,
+              border: `1.5px solid ${palette.primary}`,
+              fontSize: 17,
+              color: palette.accent,
+              outline: "none"
+            }}
+          />
+        </div>
+        {error &&
+          <div style={{ color: "#b50043", marginBottom: 12, fontWeight: 700, fontSize: 15 }}>
+            {error}
+          </div>
+        }
+        <button className="btn btn-large" style={{width: "100%", background: palette.primary, color: palette.accent, fontWeight: 700, fontSize: 18, margin:"18px 0 0 0"}} type="submit">
+          {mode === "signup" ? "Sign Up" : "Log In"}
+        </button>
+      </form>
+
+      <div style={{marginTop: 27, textAlign: "center", fontSize: 16, color: palette.accent}}>
+        {mode === "signup" ? (
+          <>
+            Already have an account?{" "}
+            <button className="btn" style={{
+              background: "none",
+              color: palette.primary,
+              fontWeight: 700,
+              boxShadow: "none",
+              textDecoration: "underline",
+              fontSize: 16,
+              padding: 0,
+              border: "none",
+              cursor: "pointer"
+            }} onClick={() => { setMode("login"); setError(""); }}>
+              Log In
+            </button>
+          </>
+        ) : (
+          <>
+            Don't have an account?{" "}
+            <button className="btn" style={{
+              background: "none",
+              color: palette.primary,
+              fontWeight: 700,
+              boxShadow: "none",
+              textDecoration: "underline",
+              fontSize: 16,
+              padding: 0,
+              border: "none",
+              cursor: "pointer"
+            }} onClick={() => { setMode("signup"); setError(""); }}>
+              Sign Up
+            </button>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
 
 // PUBLIC_INTERFACE
 /**
