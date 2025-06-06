@@ -1020,66 +1020,64 @@ function App() {
                     {song}
                   </span>
                 </div>
-                <div
-                  style={{
-                    background: "white",
-                    color: palette.accent,
-                    borderRadius: 12,
-                    padding: 28,
-                    minWidth: 240,
-                    maxWidth: "calc(100% - 320px)",
-                    boxShadow: "0 4px 20px 0 rgba(255,128,227,0.06)",
-                    flex: 3,
-                  }}
-                >
+                {/* Only display lyrics box for English, not for Tamil */}
+                {language === "English" && (
                   <div
                     style={{
-                      fontSize: 22,
-                      fontWeight: 700,
-                      color: palette.primary,
-                      marginBottom: 12,
+                      background: "white",
+                      color: palette.accent,
+                      borderRadius: 12,
+                      padding: 28,
+                      minWidth: 240,
+                      maxWidth: "calc(100% - 320px)",
+                      boxShadow: "0 4px 20px 0 rgba(255,128,227,0.06)",
+                      flex: 3,
                     }}
                   >
-                    Lyrics
-                  </div>
-                  {/* Tamil disables lyrics, override UI */}
-                  {language === "Tamil" ? (
-                    <div style={{ color: palette.accent, fontWeight: 600, padding: 12 }}>
-                      Lyrics are not available for Tamil songs.
-                    </div>
-                  ) : lyricsLoading ? (
-                    <div style={{ color: palette.accent, padding: 12 }}>
-                      Fetching lyrics...
-                    </div>
-                  ) : lyricsError ? (
-                    <div style={{ color: "#b50043", fontWeight: 600 }}>
-                      {lyricsError}
-                    </div>
-                  ) : lyrics ? (
-                    <pre
+                    <div
                       style={{
-                        fontFamily: "inherit",
-                        background: "#fafafa",
-                        color: palette.accent,
-                        borderRadius: 10,
-                        fontSize: 15,
-                        lineHeight: "1.7",
-                        whiteSpace: "pre-wrap",
-                        margin: 0,
-                        maxHeight: 320,
-                        overflowY: "auto",
-                        boxShadow: "0 1px 3px rgba(76,83,93,0.04)",
-                        padding: 16,
+                        fontSize: 22,
+                        fontWeight: 700,
+                        color: palette.primary,
+                        marginBottom: 12,
                       }}
                     >
-                      {lyrics}
-                    </pre>
-                  ) : (
-                    <div style={{ color: palette.accent }}>
-                      Select a song to view lyrics.
+                      Lyrics
                     </div>
-                  )}
-                </div>
+                    {lyricsLoading ? (
+                      <div style={{ color: palette.accent, padding: 12 }}>
+                        Fetching lyrics...
+                      </div>
+                    ) : lyricsError ? (
+                      <div style={{ color: "#b50043", fontWeight: 600 }}>
+                        {lyricsError}
+                      </div>
+                    ) : lyrics ? (
+                      <pre
+                        style={{
+                          fontFamily: "inherit",
+                          background: "#fafafa",
+                          color: palette.accent,
+                          borderRadius: 10,
+                          fontSize: 15,
+                          lineHeight: "1.7",
+                          whiteSpace: "pre-wrap",
+                          margin: 0,
+                          maxHeight: 320,
+                          overflowY: "auto",
+                          boxShadow: "0 1px 3px rgba(76,83,93,0.04)",
+                          padding: 16,
+                        }}
+                      >
+                        {lyrics}
+                      </pre>
+                    ) : (
+                      <div style={{ color: palette.accent }}>
+                        Select a song to view lyrics.
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
               <div
                 style={{
