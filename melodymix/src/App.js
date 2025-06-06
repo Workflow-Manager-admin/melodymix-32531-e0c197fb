@@ -409,6 +409,7 @@ function App() {
       },
       {
         name: "Alan Walker",
+        // Always use the imported image to guarantee asset bundling/reference
         image: alanWalkerAvatar,
         songs: [
           "Faded",
