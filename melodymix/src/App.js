@@ -4,6 +4,7 @@ import adeleAvatar from './adele-avatar.png';
 import lanaDelReyAvatar from './lana-del-rey-avatar.jpg';
 import taylorSwiftAvatar from './taylor-swift-avatar.jpg';
 import coldplayAvatar from './coldplay-avatar.jpg';
+import theWeekndAvatar from './the-weeknd-avatar.jpg';
 
 /*
  * A simple in-app component for user registration & login
@@ -397,8 +398,7 @@ function App() {
       },
       {
         name: "The Weeknd",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/9/9b/The_Weeknd_performing_in_Hong_Kong_2018_%28cropped%29.jpg",
+        image: theWeekndAvatar,
         songs: [
           "Blinding Lights",
           "Starboy",
