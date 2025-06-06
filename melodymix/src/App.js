@@ -22,47 +22,47 @@ function App() {
   const artistData = {
     Tamil: [
       {
-        name: "A. R. Rahman",
+        name: "Harris Jayaraj",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/4/45/A._R._Rahman_2018.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/4/4a/Harris_Jayaraj_at_the_Anegan_Audio_Launch.jpg",
         songs: [
-          "Vennilave Vennilave",
-          "Mukkala Mukkabala",
-          "Chinna Chinna Aasai",
-          "Enna Solla Pogirai",
+          "Vaseegara",
+          "Uyirin Uyire",
+          "Hasili Fisili",
+          "Anbil Avan"
         ],
       },
       {
-        name: "Ilaiyaraaja",
+        name: "GV Prakash",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/9/98/Ilaiyaraaja_at_Ram_Naveen%27s_sangeet_ceremony.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/7/7b/G._V._Prakash_Kumar_at_Lal_Bahadur_Shastri_Academy_Of_Music.jpg",
         songs: [
-          "Naanaga Naan Illai",
-          "Thenpandi Cheemayile",
-          "Oru Naalil",
-          "Anjali Anjali",
+          "Un Mela Aasadhaan",
+          "Yathe Yathe",
+          "Pookkal Pookkum",
+          "Imaye Imaye"
         ],
       },
       {
-        name: "Sid Sriram",
+        name: "Santhosh Narayanan",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/1/1d/Sid_Sriram_performing_at_Concert_in_NIT_Warangal.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/7/78/Santhosh_Narayanan_during_the_Audio_Launch_of_Jigarthanda.jpg",
         songs: [
-          "Adiye",
-          "Kanne Kanne",
-          "Inkem Inkem",
-          "Vellipomaakey",
+          "Kaavaalaa",
+          "Naan Nee",
+          "Enjoy Enjaami",
+          "Thangamey"
         ],
       },
       {
-        name: "Shreya Ghoshal",
+        name: "Anirudh Ravichandar",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/f/f7/Shreya_Ghoshal_2016.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/9/9f/Anirudh_Ravichander.png",
         songs: [
-          "Munbe Vaa",
-          "Suttrum Vizhi",
-          "Idhu Varai",
-          "Yen Chellam",
+          "Why This Kolaveri Di",
+          "Surviva",
+          "Kanave Kanave",
+          "Vaathi Coming"
         ],
       },
     ],
