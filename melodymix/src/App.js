@@ -5,7 +5,6 @@ import lanaDelReyAvatar from './lana-del-rey-avatar.jpg';
 import taylorSwiftAvatar from './taylor-swift-avatar.jpg';
 import coldplayAvatar from './coldplay-avatar.jpg';
 import theWeekndAvatar from './the-weeknd-avatar.jpg';
-// Only this single Alan Walker avatar import should remain
 import alanWalkerAvatar from './alan-walker-avatar-latest.jpg';
 
 /*
