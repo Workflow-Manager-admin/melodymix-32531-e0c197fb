@@ -1017,24 +1017,10 @@ function App() {
                       }}
                       loading="lazy"
                       onError={(e) => {
-                        if (artist.name === "Alan Walker") {
-                          // eslint-disable-next-line no-console
-                          console.error("Alan Walker image failed (lyrics card): src=", e.target.src, "hint:", artist._imgFileHint, "debugVar:", artist._imgDebug);
-                        }
                         e.target.onerror = null;
                         e.target.src = placeholderImg;
                       }}
                     />
-                    {artist.name === "Alan Walker" && (
-                      <div style={{
-                        position:"absolute",
-                        left:0, top:"50%", width:"100%", textAlign:"center",
-                        fontSize:12, color:"#b50043", background:"#fff7",
-                        pointerEvents:"none"
-                      }}>
-                        <span style={{fontWeight:700}}>Alan Walker avatar fail?</span>
-                      </div>
-                    )}
                   </div>
                   <span
                     style={{
