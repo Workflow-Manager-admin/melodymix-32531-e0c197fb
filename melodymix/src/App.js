@@ -331,6 +331,30 @@ function App() {
       },
     ],
     English: [
+      // Previous artists (example: Ed Sheeran, Adele)
+      {
+        name: "Ed Sheeran",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/4/45/Ed_Sheeran-6880_%28cropped%29.jpg",
+        songs: [
+          "Shape of You",
+          "Perfect",
+          "Thinking Out Loud",
+          "Photograph"
+        ]
+      },
+      {
+        name: "Adele",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/6/6b/Adele_2016.jpg",
+        songs: [
+          "Hello",
+          "Rolling in the Deep",
+          "Someone Like You",
+          "Set Fire to the Rain"
+        ]
+      },
+      // Newly added artists, as per instructions
       {
         name: "Ana Del Ray",
         image:
