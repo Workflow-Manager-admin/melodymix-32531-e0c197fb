@@ -389,6 +389,73 @@ function App() {
   }, [artist, song, step]);
 
   // Main view rendering per step
+  // If not authenticated, only show sign up / login UI and hide rest of app.
+  if (!authenticatedUser) {
+    return (
+      <div className="app" style={{
+        background: palette.secondary,
+        color: palette.accent,
+        minHeight: "100vh"
+      }}>
+        <nav
+          className="navbar"
+          style={{
+            background: palette.primary,
+            color: palette.accent,
+            borderColor: palette.accent,
+          }}
+        >
+          <div className="container" style={{ maxWidth: "1100px" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                width: "100%",
+                alignItems: "center",
+              }}
+            >
+              <div className="logo" style={{ gap: 8, color: palette.accent }}>
+                <span
+                  className="logo-symbol"
+                  style={{
+                    color: palette.accent,
+                    background: palette.secondary,
+                    borderRadius: "50%",
+                    padding: "2px 8px",
+                    marginRight: 7,
+                    fontWeight: "bold",
+                  }}
+                >
+                  ♫
+                </span>
+                MelodyMix
+              </div>
+            </div>
+          </div>
+        </nav>
+        {/* Show authentication form centered */}
+        <main>
+          <SignUpLogin palette={palette} onAuthSuccess={setAuthenticatedUser} />
+        </main>
+        <footer
+          style={{
+            textAlign: "center",
+            width: "100%",
+            fontSize: 16,
+            color: palette.accent,
+            paddingBottom: 36,
+          }}
+        >
+          <span style={{ color: palette.primary, fontWeight: 700 }}>
+            MelodyMix
+          </span>{" "}
+          &copy; {new Date().getFullYear()} | For music fans
+        </footer>
+      </div>
+    );
+  }
+
+  // Otherwise, show language selection and the rest of the flow
   return (
     <div
       className="app"
