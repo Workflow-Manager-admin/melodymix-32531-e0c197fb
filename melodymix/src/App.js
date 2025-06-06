@@ -5,7 +5,7 @@ import lanaDelReyAvatar from './lana-del-rey-avatar.jpg';
 import taylorSwiftAvatar from './taylor-swift-avatar.jpg';
 import coldplayAvatar from './coldplay-avatar.jpg';
 import theWeekndAvatar from './the-weeknd-avatar.jpg';
-import alanWalkerAvatarReload from './alan-walker-avatar.jpg?cb=2';
+import alanWalkerAvatarV3 from './alan-walker-avatar.jpg?cb=3';
 
 /*
  * A simple in-app component for user registration & login
@@ -409,8 +409,8 @@ function App() {
       },
       {
         name: "Alan Walker",
-        // Always use the imported image to guarantee asset bundling/reference. Use cache-busting import for forced refresh.
-        image: alanWalkerAvatarReload,
+        // Updated to the newest uploaded image (cache-busted)
+        image: alanWalkerAvatarV3,
         songs: [
           "Faded",
           "Alone",
