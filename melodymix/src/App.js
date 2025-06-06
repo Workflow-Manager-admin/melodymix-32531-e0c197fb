@@ -5,7 +5,6 @@ import lanaDelReyAvatar from './lana-del-rey-avatar.jpg';
 import taylorSwiftAvatar from './taylor-swift-avatar.jpg';
 import coldplayAvatar from './coldplay-avatar.jpg';
 import theWeekndAvatar from './the-weeknd-avatar.jpg';
-import alanWalkerAvatar from './alan-walker-avatar-latest.jpg';
 
 /*
  * A simple in-app component for user registration & login
@@ -405,16 +404,6 @@ function App() {
           "Starboy",
           "The Hills",
           "Save Your Tears"
-        ]
-      },
-      {
-        name: "Alan Walker",
-        image: alanWalkerAvatar, // Ensures only the imported variable is referenced for Alan Walker's avatar everywhere
-        songs: [
-          "Faded",
-          "Alone",
-          "Spectre",
-          "Darkside"
         ]
       },
       // Example: if you need to add a generic/unknown artist in the future,
