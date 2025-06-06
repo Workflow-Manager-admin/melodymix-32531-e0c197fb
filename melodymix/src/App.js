@@ -341,8 +341,7 @@ function App() {
       // Merged, full English artist list (Taylor Swift + previous and current)
       {
         name: "Ed Sheeran",
-        image:
-          "https://upload.wikimedia.org/wikipedia/commons/4/45/Ed_Sheeran-6880_%28cropped%29.jpg",
+        image: require('./ed-sheeran-avatar.png'),
         songs: [
           "Shape of You",
           "Perfect",
