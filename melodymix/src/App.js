@@ -409,13 +409,17 @@ function App() {
       },
       {
         name: "Alan Walker",
-        image: alanWalkerAvatar,
+        // Add additional fallback and error-wiring for diagnosis
+        image: alanWalkerAvatar ? alanWalkerAvatar : placeholderImg,
+        _imgDebug: alanWalkerAvatar,
         songs: [
           "Faded",
           "Alone",
           "Spectre",
           "Darkside"
-        ]
+        ],
+        // Provide expected file path for debugging
+        _imgFileHint: "alan-walker-avatar.jpg",
       },
       // Example: if you need to add a generic/unknown artist in the future,
       // provide no image and the placeholderImg will show up
