@@ -331,7 +331,7 @@ function App() {
       },
     ],
     English: [
-      // Previous artists (example: Ed Sheeran, Adele)
+      // Merged, full English artist list (Taylor Swift + previous and current)
       {
         name: "Ed Sheeran",
         image:
@@ -354,9 +354,20 @@ function App() {
           "Set Fire to the Rain"
         ]
       },
-      // Newly added artists, as per instructions
       {
-        name: "Ana Del Ray",
+        name: "Taylor Swift",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/f/f2/Taylor_Swift_Red_Tour_5%2C_2013.jpg",
+        songs: [
+          "Love Story",
+          "Blank Space",
+          "Shake It Off",
+          "You Belong With Me",
+          "Cardigan"
+        ]
+      },
+      {
+        name: "Lana Del Rey",
         image:
           "https://upload.wikimedia.org/wikipedia/commons/7/7a/Lana_Del_Rey_%282%29_%28cropped%29.jpg",
         songs: [
@@ -399,6 +410,7 @@ function App() {
           "Darkside"
         ]
       },
+      // Add more previous or requested English artists here if there were any that are not already present
     ],
   };
 
